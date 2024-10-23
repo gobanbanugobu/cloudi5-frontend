@@ -1,38 +1,796 @@
-.App {
+.backgroundImage {
+  background-image: url("./Images/backgroundImage.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1; /* Ensure content is above the background */
+}
+
+.backgroundImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  box-shadow: inset 0 0 50px #436559;  
+  z-index: 0; 
+}
+
+.logo {
+  width: 9.375rem;
+  margin: 3.125rem;
+  position: relative;
+  z-index: 2; 
+}
+
+.backgroundImageSection h1 {
+  color: white;
+  position: relative;
+  z-index: 2; 
   text-align: center;
+  font-size:3rem ;
+  margin-top: 2rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.markContainer{
+  margin-top: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+gap:1.875rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.marks{
+  width:1.5rem;
+  height:1.5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 0.3125rem;
+  position: relative;
+  z-index: 2;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.markTexts{
+  font-size:1rem;
+  position: relative;
+  z-index: 2;
+  color: white;
+  margin-bottom: 0rem;
+}
+.sectionContainer{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap:0.625rem;
+}
+.registerButton{
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 1.15rem;
+  background-color: #D7AC14;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+
+}
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0rem;
+}
+.registerButton:hover {
+  background-color: #b59110; /* Darker shade on hover */
+cursor: pointer;
+}
+.approach{
+  background-color: #F9F9F9;
+padding:1.875rem 4.685rem ;
+}
+.approach h2{
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.approach h2 span{
+  color:green ;
+}
+.approach p{
+line-height:2;
+text-align: justify;
+}
+.services{
+  padding:0rem 4.685rem ;
+}
+.services h2{
+  
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+.serviceCardContainer {
+  margin: 0rem 4.685rem;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content:space-between; 
+  gap: 30px;
+}
+
+.serviceCard {
+  background-color: #D8E1DE;
+  padding: 15px;
+  border-radius: 15px;
+  flex: 1 1 200px; 
+  margin: 10px; 
+}
+
+.serviceCard img {
+  width: 50px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+} 
+
+.serviceCard p {
+  margin: 0.5rem;
+  font-weight: 600;
+}
+.webDesign {
+  position: relative;
+  background-color: #FFF1F6;
+  margin: 1.5rem 4.685rem;
+  padding: 1.5rem 4.685rem 3rem 4.685rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.webDesign h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem; 
+}
+
+.webDesign h2 span {
+  color: green;
+}
+
+.webDesign ul {
+  list-style-type: none; 
+  padding-left: 0; 
+}
+
+.webDesign li {
+  position: relative;
+  margin-bottom: 1.5rem; 
+  font-weight: 600; 
+  line-height: 1.7;
+  list-style-type: disc;
+}
+
+/* .webDesign li::before {
+  content: '✔'; 
+  color: green ; 
+  font-size: 1rem;
+  position: absolute;
+  left: 0; 
+  top: 0.1rem; 
+  width: 1.5rem;
+  height: 1.5rem; 
+  border: 2px solid green; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+} */
+
+.women {
+  width:12.5rem;
+  border-radius: 15px; 
+  object-fit: cover; 
+  margin-left: 5rem;
+}
+#registerButton{
+color: black;
+background-color: white;
+}
+.greenContainer {
+  margin-top: -5rem;
+  background-color: #023020;
+  border-radius:1.875rem;
+  text-align: center;
+  padding: 1rem 0rem;
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: calc(100% - 250px); 
+z-index: 3;
+
+}
+.greenContainer h2{
+  font-size: 2rem;
   color: white;
 }
+.greenContainer p{
+  color: white;
+}
+.registerSteps h2{
+  margin-top: 18.75rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.registerSteps p{
+  text-align: center;
+  color: #666;
+}
+.registerStepsContainer{
+  margin: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.registerStepsContainer h5{
+  margin: 3rem 0rem 1rem 0rem;
+font-size: 1.5rem;
+padding: 15px;
+color: white;
+background-color: #006743;
+border-radius: 10px;
+display: inline;
+box-shadow:0px 5px 10px  #666 ;
+}
+.registerStepsContainer p{
+  border: 1px dashed #006743 ;
+  padding: 10px 30px;
+  border-radius: 30px;
 
-.App-link {
-  color: #61dafb;
+}
+.registerStepsLine {
+  width: 50px; /* Adjust the width of the line */
+  border-top: 2px dashed #006743; /* Create a dashed line */
+  margin: 1.5rem 0; /* Add margin for spacing */
+}
+.registerStepsOverAllContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 5rem;
+  justify-content: space-between;
+}
+.formDetails {
+  padding:2rem 4.685rem;
+  background-color: #D8E1DE;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.formDetailsHeading {
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: #333;
+}
+
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formLabel {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.formTextarea {
+  height: 100px;
+}
+
+.formButton {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #A6A6A6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  font-size: 1em;
+}
+
+.formButton:hover {
+  background-color: #218838;
+}
+
+.errorText {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+
+button:hover {
+  background-color: #484;
+}
+
+p {
+  font-size: 12px;
+}
+.faqh2{
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+.faqp{
+  text-align: center;
+  font-size: 1.15rem;
+  color: #666;
+}
+.accordion{
+  padding:0.5rem 4.685rem;
+
+}
+.footer {
+  margin: 3rem 0 1rem 0;
+  padding:3rem 4.685rem 1rem 4.685rem;
+  background-color:#012216; /* Light background for footer section */
+  color: #333; /* Dark text color */
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerServices h5 {
+  font-size: 1.2rem;
+  color:white; /* Apply secondary color for heading */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footerServices ul {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0; /* Remove default padding */
+}
+
+.footerServices li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color:white; /* Slightly lighter text color */
+  cursor: pointer;
+}
+
+.footerServices li:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+.footerMiddle{
+  background-color:#012216; /* Light background for footer section */
+ margin-top: -50px;
+ display: flex;
+ padding: 3rem 4.685rem;
+ gap: 100px;
+ justify-content: space-between;
+
+}
+.footerMiddle h5{
+  padding-top: 30px;
+  color: white;
+}
+.footerMiddle p{
+  color: white;
+  max-width: 500px;
+  font-size: 1rem;
+}
+#logo{
+  width:100px;
+  margin:0.5rem ;
+}
+.footerBottom{
+  background-color: #06885B;
+  text-align: center;
+
+}
+.footerBottom p{
+  color: white;
+  font-size: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .footerBottom p{
+
+    font-size: 0.9rem;
+    padding:1rem 1.5rem;
+    cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+  .footerMiddle p{
+    font-size: 0.85rem;
+    text-align: justify;
+  }
+  
+  .footerMiddle{
+   margin-top: -50px;
+   display: flex;
+   flex-direction: column;
+   padding: 3rem 1.5rem;
+   gap: 0px;
+  
+  }
+  .footer {
+    margin: 1rem 0 0 0;
+    padding:3rem 1.5rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+
+  .footerServices ul {
+    padding-left: 0;
+  }
+
+  .footerServices li {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+  }
+
+  .footerServices h5 {
+    font-size: 1.1em;
+  }
+  .accordion{
+    padding:0.5rem 1.5rem;
+  
+  }
+  .faqh2{
+    font-size: 1.5rem;
+    margin: 1rem 1.5rem;
+  }
+  .faqp{
+    font-size: 1rem;
+  }
+  .formDetails {
+    padding:1rem 0.5rem;
+  }
+  .formContainer {
+    padding: 15px;
+  }
+
+  .formInput,
+  .formSelect,
+  .formTextarea {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .formButton {
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  .formDetailsHeading {
+    font-size: 1rem;
+  }
+  .serviceCard img{
+    width: 40px;
+    padding: 10px;
+  }
+  .registerSteps h2 {
+    margin-top: 20rem; /* Adjust the top margin for smaller screens */
+    font-size: 1.5rem; /* Reduce font size */
+    text-align: center; /* Center the heading */
+  }
+
+  .registerStepsOverAllContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of the steps */
+    justify-content: center; /* Center the steps in the container */
+    align-items: flex-start; /* Align items to the start */
+    margin: 1rem; /* Adjust margin for better spacing */
+  }
+
+  .registerStepsContainer {
+    display: flex;
+    flex-direction: column; /* Keep the contents (h5 and p) in column */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* Reduce gap between h5 and p */
+    margin: 0 1rem; /* Add horizontal margin for spacing */
+    flex: 1 1 20%; /* Allow each step to take equal space and wrap if needed */
+  }
+
+  .registerStepsContainer h5 {
+    margin: 0; /* Remove margin */
+    font-size: 1.25rem; /* Reduce font size */
+    padding: 10px; /* Adjust padding */
+    width: 40px; /* Smaller width for the number */
+    height: 40px; /* Ensure it's circular */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the number inside the circle */
+    background-color: #006743; /* Background color */
+    color: white; /* Text color */
+    border-radius:15px; /* Make it circular */
+  }
+
+  .registerStepsContainer p {
+    font-size: 0.9rem; /* Reduce font size */
+    padding: 8px 20px; /* Adjust padding */
+    width: auto; /* Full width for better readability */
+    text-align: center; /* Center-align the text */
+    border: 1px dashed #006743; /* Add a dashed border */
+    border-radius: 30px; /* Rounded corners */
+  }
+
+  .registerStepsLine {
+    display: none; /* Hide the dashed line on mobile */
+  }
+  .greenContainer {
+    margin-top: -4.5rem; /* Adjust the margin for mobile */
+    width: calc(100% - 75px); /* Make the container fill more of the screen */
+    padding: 1rem 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .greenContainer h2 {
+    font-size: 1.25rem; /* Further reduce the font size for mobile */
+  }
+
+  .greenContainer p {
+    font-size: 0.9rem; /* Adjust the paragraph font size */
+  }
+  .webDesign {
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center-align content */
+    padding: 1rem 1.5rem 3rem 1.5rem; /* Reduce padding for mobile */
+    margin: 1rem; /* Reduce margin for mobile */
+  }
+
+  .webDesign h2 {
+    font-size: 1.5rem; /* Reduce heading size */
+    text-align: center; /* Center-align the heading */
+  }
+
+  .webDesign ul {
+    padding-left: 0; /* Remove default padding */
+    text-align: left; /* Align the text to the left */
+  }
+
+  .webDesign li {
+    font-size: 0.9rem; /* Reduce font size for list items */
+    margin-bottom: 1rem; /* Space between list items */
+    padding-left: 1.75rem; /* Adjust padding for the custom tick */
+  }
+
+  .webDesign li::before {
+    width: 1rem; /* Adjust circle size for mobile */
+    height: 1rem;
+    font-size: 0.8rem; /* Adjust tick size */
+  }
+
+  .women {
+    width: 150px; /* Adjust image size for mobile */
+    margin-left: 0; /* Center the image */
+    margin-top: 1.5rem; /* Add margin above the image */
+  }
+  .serviceCardContainer {
+    margin: 0rem 1rem; 
+    gap: 0px;
+  }
+
+  .serviceCard {
+    flex: 1 1 calc(50% - 20px); 
+  }
+
+  .services{
+    padding:0rem 1.5rem ;
+  }
+  .services h2{
+    font-size: 1.5rem;
+  text-align: center;
+  }
+  .approach{
+  padding:1rem 1.5rem ;
+  }
+  .approach h2{
+    font-size: 1.5rem;
+   text-align: center;
+  }
+  .approach h2 span{
+    color:green ;
+  }
+  .approach p{
+  line-height:2;
+  }
+  .register{
+    margin: 1.5rem 0rem;
+  }
+  .registerButton{
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem
+  
+  }
+  .markContainer{
+    display: flex;
+   flex-direction: column;
+  align-items: flex-start;
+  gap:1rem;
+    margin-left:2rem;
+    }
+  .sectionContainer{
+    gap:0.5rem;
+  }
+  .mark{
+    width:0.625rem;
+    height:0.623rem;
+    border-radius: 50%;
+    padding: 0.125rem;
+  }
+  .markText{
+    font-size:0.935rem;
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+
+  .logo {
+    width:4.68rem;
+    margin:1.56rem;
+  }
+  .backgroundImageSection h1 {
+    margin-top: 100px;
+    font-size:1.5rem ;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer {
+    margin: 1rem 0 0 0;
+    padding:3rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .accordion{
+    padding:0.5rem 3rem;
+  
+  }
+  .formDetails {
+    padding:1rem 0.5rem;
+  }
+  .serviceCard img{
+    width: 40px;
+    padding: 10px;
+  }
+  .registerSteps h2 {
+    margin-top: 10rem; /* Adjust top margin */
+    font-size: 1.75rem; /* Slightly reduce font size */
+  }
+
+  .registerStepsContainer h5 {
+    font-size: 1.4rem; /* Adjust font size */
+    padding: 12px; /* Adjust padding */
+    width: 45px; /* Adjust width and height */
+    height: 45px;
+  }
+
+  .registerStepsContainer p {
+    font-size: 1rem; /* Adjust font size */
+    padding: 10px 25px; /* Adjust padding */
+    width: 90%; /* Adjust width for better readability */
+  }
+
+  .registerStepsLine {
+    width: 75px; /* Wider line for tablet view */
+    margin: 1rem 0; /* Adjust margin for spacing */
+  }
+
+  .registerStepsOverAllContainer {
+    margin: 1.5rem 3rem; /* Adjust margin for tablets */
+    justify-content: space-around; /* Adjust spacing between items */
+  }
+  .greenContainer {
+    margin-top: -4rem; /* Adjust the margin for tablet */
+    width: calc(100% - 100px); /* Make the container wider on tablet */
+  }
+
+  .greenContainer h2 {
+    font-size: 1.75rem; /* Slightly reduce the font size */
+  }
+
+  .greenContainer p {
+    font-size: 1rem; /* Adjust font size for better readability */
+  }
+  .webDesign {
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center-align content */
+    padding: 1.5rem; /* Reduce padding for tablet view */
+    margin: 1.5rem 2rem; /* Adjust margin for tablet view */
+  }
+
+  .webDesign h2 {
+    font-size: 1.75rem; /* Slightly reduce font size */
+    text-align: center; /* Center-align the heading */
+  }
+
+  .webDesign ul {
+    text-align: left; /* Keep the list aligned to the left */
+    padding-left: 0; /* No extra padding */
+  }
+
+  .webDesign li {
+    margin-bottom: 1rem; /* Adjust spacing for smaller screens */
+  }
+
+  .webDesign li::before {
+    width: 1.25rem; /* Adjust circle size for tablet */
+    height: 1.25rem;
+    font-size: 0.9rem; /* Adjust tick size */
+  }
+
+  .women {
+    width: 180px; /* Adjust image size for tablet */
+    margin-left: 0; /* Center the image */
+    margin-top: 1.5rem; /* Add margin above the image */
+  }
+  .serviceCardContainer {
+    margin: 0rem 2rem; 
+    gap: 30px;
+  }
+
+  .serviceCard {
+    flex: 1 1 calc(33.33% - 20px); 
+    margin: 10px; 
+  }
+
+  .serviceCard img {
+    width: 30px; 
+    padding: 10px; 
+  }
+
+  .serviceCard p {
+    font-size: 1rem; 
+  }
+  .services{
+    padding:0rem 2rem ;
+  }
+  .services h2{
+    font-size: 1.75rem;
+  }
+  .approach{
+    padding:1rem 2rem ;
+    }
+    .approach h2{
+      font-size: 1.75rem;
+    }
+    .approach h2 span{
+      color:green ;
+    }
+    .approach p{
+    line-height:2;
+    }
+  .registerButton{
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem
+  
+  }
+  .backgroundImageSection h1 {
+    font-size:2rem ;
+  }
+  .logo {
+    width:6.25rem;
+    margin:3.125rem;
   }
 }
